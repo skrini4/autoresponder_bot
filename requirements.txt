@@ -1,0 +1,22 @@
+
+# Основные зависимости
+pyTelegramBotAPI==4.14.0
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Email обработка
+email-validator==2.0.0
+imaplib2==3.6
+
+# WhatsApp через Green API
+whatsapp-api-client-python==0.4.5
+
+# Дополнительные библиотеки
+openpyxl==3.1.2
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# Опциональные (для расширенного функционала)
+# pyrogram==2.0.106
+# TgCrypto==1.2.5
+# asyncio==3.4.3

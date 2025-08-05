@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  autoresponder-bot:
+    build: .
+    container_name: autoresponder-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - bot-network
+
+  # Опционально: Redis для очередей (при масштабировании)
+  # redis:
+  #   image: redis:6-alpine
+  #   container_name: autoresponder-redis
+  #   restart: unless-stopped
+  #   networks:
+  #     - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
+
+volumes:
+  logs:
+  data:
